@@ -10,10 +10,4 @@ app.use(express.static('resources'));
 require('./app/routers/file.router.js')(app, router, upload);
 
 // Create a Server
-var server = app.listen(3000, () => {
-
-    var host = server.address().address
-    var port = server.address().port
-
-    console.log("App listening at http://%s:%s", host, port);
-})
+var server = app.listen(process.env.PORT || 3000);
