@@ -15,3 +15,8 @@ exports.downloadFile = (req, res) => {
     var filename = req.params.filename;
     res.download(uploadFolder + filename);
 }
+
+exports.deleteFile = (req, res) => {
+    var filename = req.params.filename;
+    fs.unlink(uploadFolder + filename);
+}

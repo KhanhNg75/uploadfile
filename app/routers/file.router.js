@@ -18,6 +18,8 @@ module.exports = (app, router, upload) => {
 
     app.get('/api/files/:filename', fileWorker.downloadFile);
 
+    app.post('/api/files/delete', fileWorker.deleteFile);
+
     app.use('/', router);
 
     app.use('*', (req, res) => {
